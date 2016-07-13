@@ -1,12 +1,12 @@
 FROM relaxart/rabbitmq-base
 MAINTAINER Ilya Isaev me@ilyaisaev.com
 
-ADD rabbitmq.config /etc/rabbitmq/
+ADD rabbitmq.config /etc/rabbitmq/rabbitmq.config
 ADD erlang.cookie /var/lib/rabbitmq/.erlang.cookie
 
 RUN chmod u+rw /etc/rabbitmq/rabbitmq.config && \
 	chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie && \
-	chmod 400 /var/lib/rabbitmq/.erlang.cookie
+	chmod 400 /var/lib/rabbitmq/.erlang.cookie && \
 	mkdir /opt/rabbit 
 
 ADD run.sh /opt/rabbit/
