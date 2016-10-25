@@ -1,12 +1,14 @@
 rabbit1:
-  image: relaxart/rabbitmq-server
+#  image: relaxart/rabbitmq-server
+  build: ./server
   hostname: rabbit1
   ports:
     - "5672:5672"
     - "15672:15672"
 
 rabbit2:
-  image: relaxart/rabbitmq-server
+#  image: relaxart/rabbitmq-server
+  build: ./server
   hostname: rabbit2
   links:
     - rabbit1
@@ -19,7 +21,8 @@ rabbit2:
       - "15673:15672"
 
 rabbit3:
-  image: relaxart/rabbitmq-server
+#  image: relaxart/rabbitmq-server
+  build: ./server
   hostname: rabbit3
   links:
     - rabbit1
