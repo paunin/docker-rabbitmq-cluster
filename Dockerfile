@@ -25,6 +25,8 @@ ADD run.sh /opt/rabbit/
 
 RUN chmod a+x /opt/rabbit/run.sh
 
+ENV RABBITMQ_LOGS=- RABBITMQ_SASL_LOGS=-
+
 EXPOSE 5672
 EXPOSE 15672
 EXPOSE 25672

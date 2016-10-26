@@ -1,6 +1,6 @@
 rabbit1:
 #  image: relaxart/rabbitmq-server
-  build: ./server
+  build: ./
   hostname: rabbit1
   ports:
     - "5672:5672"
@@ -8,7 +8,7 @@ rabbit1:
 
 rabbit2:
 #  image: relaxart/rabbitmq-server
-  build: ./server
+  build: ./
   hostname: rabbit2
   links:
     - rabbit1
@@ -22,7 +22,7 @@ rabbit2:
 
 rabbit3:
 #  image: relaxart/rabbitmq-server
-  build: ./server
+  build: ./
   hostname: rabbit3
   links:
     - rabbit1
